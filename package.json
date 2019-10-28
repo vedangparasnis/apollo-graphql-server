@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "apollo": "nodemon app.js",
+    "apolloapp": "node app.js",
+    "init": "npm i",
+    "client": "npm run start --prefix apollo_client",
+    "apolloclient": "concurrently \"npm run apollo\" \"npm run client\" "
+  },
+  "author": "vedang",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.9.6",
+    "bcryptjs": "^2.4.3",
+    "graphql": "^14.5.8",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.5",
+    "validator": "^11.1.0"
+  }
+}
