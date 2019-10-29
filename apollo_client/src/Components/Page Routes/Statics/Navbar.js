@@ -69,10 +69,11 @@ const Navbar = () => {
             </Menu.Menu>
           ) : (
             <Menu.Item position="right">
-              <Menu.Item name={currentUser.toUpperCase()} active={true} />
-              <Menu.Item style={{ fontSize: "20px" }}>
-                <Icon color="yellow" name="users" />
-              </Menu.Item>
+              <Menu.Item
+                name={currentUser.toLocaleLowerCase()}
+                active={true}
+                style={{ marginBottom: "8px" }}
+              />
             </Menu.Item>
           )}
         </Menu>

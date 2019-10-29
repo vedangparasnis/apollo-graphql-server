@@ -11,13 +11,14 @@ import Del from "./DeleteAccount";
 import { Header, Container, Card, Menu, Divider } from "semantic-ui-react";
 import { Grid, Message, Image } from "semantic-ui-react";
 import { Segment, Loader, Flag } from "semantic-ui-react";
+import { Button, Icon, Label } from "semantic-ui-react";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
-  const { loading, data } = useQuery(getAppPosts);
+  const { loading, data } = useQuery(getAllPosts);
   // const { load, postData } = useQuery(getAllPosts);
   if (data) {
-    let { getUserswithUs } = data;
+    let { getPosts } = data;
     // const { getPosts } = postData;
     return (
       <div>
@@ -39,25 +40,37 @@ const Home = () => {
             </Menu>
           </Segment>
           <Divider />
-          <Grid columns={5} divided>
+          <Grid columns={2} divided>
             <Grid.Row>
-              {getUserswithUs.map(el => (
+              {getPosts.map(el => (
                 <div>
                   <Grid.Column key={el.id} className="marginGrid">
                     <Card className="userCard">
-                      <Image
-                        size="medium"
-                        src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
-                      />
                       <Card.Content>
-                        <Message>
-                          <Message.Header>
-                            {el.username.toUpperCase()}
-                          </Message.Header>
-                          <Message.List>
-                            <Message.Item>Email::{el.email}</Message.Item>
-                          </Message.List>
-                        </Message>
+                        {el.username.toUpperCase()}
+                        <Message.Item>Username:: {el.body}</Message.Item>
+                        <Button as="div" labelPosition="right">
+                          <Button color="red" className="butPosition">
+                            <Icon name="heart" />
+                            Like
+                          </Button>
+                          <Label as="a" basic color="red" pointing="left">
+                            0
+                          </Label>
+                        </Button>
+                        <Button
+                          as="div"
+                          labelPosition="right"
+                          className="butPosition"
+                        >
+                          <Button basic color="blue" className="butPosition">
+                            <Icon name="comment" />
+                            comment
+                          </Button>
+                          <Label as="a" basic color="blue" pointing="left">
+                            0
+                          </Label>
+                        </Button>
                       </Card.Content>
                     </Card>
                   </Grid.Column>
