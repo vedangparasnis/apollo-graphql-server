@@ -11,6 +11,7 @@ import Auth from "./Components/Page Routes/Auth/Auth";
 
 import "semantic-ui-css/semantic.min.css";
 import "./App.css";
+import Drawer from "./Components/Page Routes/Statics/Drawer";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Router>
         <Navbar fields={window.location.href} />
         <div>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Drawer} />
           <Auth exact path="/Login" component={Login} />
           <Auth exact path="/Register" component={Register} />
         </div>

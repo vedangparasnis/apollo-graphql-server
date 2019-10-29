@@ -6,6 +6,7 @@ import jwt from "jwt-decode";
 import { Icon } from "semantic-ui-react";
 // context-hook
 import { AuthContext } from "../../Context/context";
+import Drawer from "./Drawer";
 
 const Navbar = () => {
   const context = React.useContext(AuthContext);
@@ -49,7 +50,6 @@ const Navbar = () => {
               onClick={handleItemClick}
             />
           </Link>
-
           {token == "notoken" ? (
             <Menu.Menu position="right">
               <Link to="/Login">
@@ -72,19 +72,6 @@ const Navbar = () => {
               <Menu.Item name={currentUser.toUpperCase()} active={true} />
               <Menu.Item style={{ fontSize: "20px" }}>
                 <Icon color="yellow" name="users" />
-              </Menu.Item>
-              <Menu.Item>
-                <Button
-                  secondary
-                  onClick={() => {
-                    localStorage.clear();
-                    context.logout();
-                    // same as props.history.push('/')  as parent router-dom hoc
-                    window.location.href = "/Login";
-                  }}
-                >
-                  Logout
-                </Button>
               </Menu.Item>
             </Menu.Item>
           )}

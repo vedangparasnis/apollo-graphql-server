@@ -43,3 +43,8 @@ image :hover {
 .App-link {
   color: #09d3ac;
 }
+
+#pushable-sidebar {
+  height: 100%;
+  width: auto;
+}

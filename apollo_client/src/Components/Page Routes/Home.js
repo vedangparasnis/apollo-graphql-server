@@ -64,7 +64,13 @@ const Home = () => {
                 </div>
               ))}
             </Grid.Row>
-            <Grid.Row>{user.username === null ? null : <USerRev />}</Grid.Row>
+            <Grid.Row>
+              {user.username === null ? null : (
+                <div>
+                  <USerRev /> <Del />
+                </div>
+              )}
+            </Grid.Row>
           </Grid>
         </Container>
         <Divider />
@@ -76,7 +82,6 @@ const Home = () => {
         <Container>
           <Segment>
             <Loader active />
-
             <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
           </Segment>
         </Container>
