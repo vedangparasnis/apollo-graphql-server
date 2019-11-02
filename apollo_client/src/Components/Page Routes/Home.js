@@ -5,23 +5,52 @@ import gql from "graphql-tag";
 import { AuthContext } from "../Context/context";
 // components
 import USerRev from "./USerRev";
-import Del from "./DeleteAccount";
+import { chartData } from "./Statics/StatData/stats";
 
 // semantic ui stuff
 import { Header, Container, Card, Menu, Divider } from "semantic-ui-react";
 import { Grid, Message, Image } from "semantic-ui-react";
 import { Segment, Loader, Flag } from "semantic-ui-react";
 import { Button, Icon, Label } from "semantic-ui-react";
+import { Pie, Line } from "react-chartjs-2";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
   const { loading, data } = useQuery(getAllPosts);
+  const [charts, setChart] = React.useState(chartData);
   // const { load, postData } = useQuery(getAllPosts);
   if (data) {
     let { getPosts } = data;
     // const { getPosts } = postData;
     return (
       <div>
+        {/* chart data */}
+        <div style={{ position: "relative" }}>
+          <Container>
+            <Grid columns={2}>
+              <Grid.Row>
+                <Grid.Column>
+                  <Line
+                    options={{
+                      responsive: true,
+                      maintainAspectRatio: true,
+                      aspectRatio: window.innerWidth / window.innerHeight
+                    }}
+                    data={charts}
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <Pie
+                    options={{
+                      responsive: true
+                    }}
+                    data={charts}
+                  />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+        </div>
         <Container>
           <br />
           <Header as="h2">Our Users</Header>
@@ -80,7 +109,7 @@ const Home = () => {
             <Grid.Row>
               {user.username === null ? null : (
                 <div>
-                  <USerRev /> <Del />
+                  <USerRev />
                 </div>
               )}
             </Grid.Row>
@@ -102,17 +131,6 @@ const Home = () => {
     );
   }
 };
-
-const getAppPosts = gql`
-  {
-    getUserswithUs {
-      id
-      email
-      username
-      createdAt
-    }
-  }
-`;
 
 const getAllPosts = gql`
   {

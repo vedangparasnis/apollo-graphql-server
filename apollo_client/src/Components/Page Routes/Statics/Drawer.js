@@ -13,6 +13,8 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 import { Query } from "mongoose";
 
+import "../../../App.css";
+
 const Drawer = () => {
   // usemutation return an array while query return a queru
   let datas;
@@ -33,25 +35,17 @@ const Drawer = () => {
     console.log(datas);
   }
   return (
-    <div>
+    <div className="drawer">
       <Sidebar.Pushable>
         <Sidebar
           as={Menu}
           animation="overlay"
           icon="labeled"
           inverted
-          onHide={() => {
-            setVisible(true);
-          }}
+          onHide={() => setVisible(false)}
           vertical
-          visible={
-            token
-              ? () => {
-                  setVisible(!visible);
-                }
-              : visible
-          }
-          width={token ? "thin" : "wide"}
+          visible={visible}
+          width={token ? "wide" : "very thin"}
         >
           <Menu.Item as="a">
             <Button secondary>
@@ -59,19 +53,27 @@ const Drawer = () => {
             </Button>
           </Menu.Item>
           {token ? (
-            <Menu.Item>
-              <Button
-                secondary
-                onClick={() => {
-                  localStorage.clear();
-                  context.logout();
-                  // same as props.history.push('/')  as parent router-dom hoc
-                  window.location.href = "/Login";
-                }}
-              >
-                Logout
-              </Button>
-            </Menu.Item>
+            <div>
+              <Menu.Item>
+                <Button
+                  secondary
+                  onClick={() => {
+                    localStorage.clear();
+                    context.logout();
+                    // same as props.history.push('/')  as parent router-dom hoc
+                    window.location.href = "/Login";
+                  }}
+                >
+                  Logout
+                </Button>
+              </Menu.Item>
+              <Menu.Item>
+                <Button secondary>
+                  <Link to="/DeleteAccount"> Delete </Link>
+                  <Icon name="delete"></Icon>
+                </Button>
+              </Menu.Item>
+            </div>
           ) : null}
         </Sidebar>
         <Sidebar.Pusher
@@ -86,7 +88,7 @@ const Drawer = () => {
           >
             <Icon name="user" />
           </Button>
-          <div className="home" style={{ height: height }}>
+          <div className="home" style={{ height: "auto" }}>
             <Home />
           </div>
         </Sidebar.Pusher>

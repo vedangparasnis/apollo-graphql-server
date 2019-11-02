@@ -2,12 +2,14 @@ import React from "react";
 import { AuthContext } from "../Context/context";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
+import { Link } from "react-router-dom";
 
 // semantic ui stuff
 import { Divider, Grid, Container, Form, Button } from "semantic-ui-react";
 import { Label } from "semantic-ui-react";
+import Home from "./Home";
 
-function DeleteAccount() {
+function DeleteAccount(props) {
   const [delMessage, setDelMessage] = React.useState({ msg: "" });
   const [del, { loading }] = useMutation(query, {
     update(proxy, result) {
@@ -36,6 +38,13 @@ function DeleteAccount() {
                   name="Account name.."
                 />
                 <Button content="Delete Account" negative />
+                <Button
+                  content="Home Account"
+                  positive
+                  onClick={() => {
+                    props.history.push("/");
+                  }}
+                ></Button>
               </Form>
             </Grid.Column>
           </Grid.Row>

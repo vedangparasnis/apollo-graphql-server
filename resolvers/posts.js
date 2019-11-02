@@ -23,6 +23,7 @@ module.exports = {
         await newPosts.save();
         return newPosts;
       } catch (err) {
+        console.log(err);
         return err;
       }
     },

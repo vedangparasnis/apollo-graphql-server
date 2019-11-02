@@ -12,6 +12,7 @@ import Auth from "./Components/Page Routes/Auth/Auth";
 import "semantic-ui-css/semantic.min.css";
 import "./App.css";
 import Drawer from "./Components/Page Routes/Statics/Drawer";
+import DeleteAccount from "./Components/Page Routes/DeleteAccount";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/" component={Drawer} />
           <Auth exact path="/Login" component={Login} />
           <Auth exact path="/Register" component={Register} />
+          <Route exact path="/DeleteAccount" component={DeleteAccount} />
         </div>
       </Router>
     </AuthProvider>

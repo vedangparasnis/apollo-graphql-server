@@ -8,8 +8,10 @@ import { AuthContext } from "../Context/context";
 // semantic ui
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 const USerRev = () => {
+  // all the hooks
   const [complete, setComplete] = React.useState(false);
-  const [data, setData] = React.useState({ body: "", username: "" });
+  const [data, setData] = React.useState({ body: "" });
+  const [currentUser, setCcurrentUser] = React.useState("");
   const [err, setErr] = React.useState({});
 
   // meiddleware for setting context
@@ -27,14 +29,22 @@ const USerRev = () => {
     }
   });
   const changer = e => {
-    let username = decode(localStorage.getItem("token")).username;
     let body = e.target.value;
-    const sub = { username, body };
-    setData({ ...data, ...{ sub } });
+    const curr = { body };
+    setData({ ...data, ...curr });
+    console.log(data);
   };
   const submit = e => {
     e.preventDefault();
-    console.log(data);
+    if (localStorage.getItem("token")) {
+      let username = decode(localStorage.getItem("token")).username;
+      setCcurrentUser(username);
+    }
+    // valid the body
+    if (data.body.trim().length === 0) {
+      let errs = { emps: "the body length cannot be empty" };
+      setErr(errs);
+    }
     addPost();
   };
   return (
@@ -52,7 +62,7 @@ const USerRev = () => {
             <Header>Welcome there User</Header>
             <Form onSubmit={submit} loading={loading ? true : false}>
               <Form.Input
-                error={data.body ? "please enter a body" : null}
+                error={err ? null : "please enter a body"}
                 name="body"
                 label="Contributions Idea..."
                 onChange={changer}

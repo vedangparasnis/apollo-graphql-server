@@ -22,7 +22,7 @@
 }
 .appbar-main {
   height: 50px !important;
-  background: #de5246;
+  background: linear-gradient(45deg, #08e103, #071d61);
   font-weight: bold;
   font-size: 80px;
   width: auto;
@@ -48,4 +48,16 @@ image :hover {
 #pushable-sidebar {
   height: 100%;
   width: auto;
+}
+.drawer {
+  font-size: 1px !important;
+}
+
+@media only screen and (max-with: 600px) {
+  .drawer {
+    display: flex !important;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 1px;
+  }
 }

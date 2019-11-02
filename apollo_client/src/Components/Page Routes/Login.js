@@ -16,17 +16,19 @@ function Login(props) {
     password: ""
   });
 
+  function setTokens(result, token) {
+    localStorage.setItem("token", token);
+    localStorage.setItem("email", result.data.Login.email);
+    localStorage.setItem("username", result.data.Login.username);
+    localStorage.setItem("createdAt", result.data.Login.createdAt);
+  }
   const [addUser, { loading }] = useMutation(query, {
     // triggered on success register as a callback async
     update(proxy, result) {
       setErrors({});
-      console.log(result);
       context.login(result.data.Login);
       let token = result.data.Login.token;
-      localStorage.setItem("token", token);
-      localStorage.setItem("email", result.data.Login.email);
-      localStorage.setItem("username", result.data.Login.username);
-      localStorage.setItem("createdAt", result.data.Login.createdAt);
+      setTokens(result, token);
     },
     onError(err) {
       //return graphql server errors
