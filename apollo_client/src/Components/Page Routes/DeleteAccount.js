@@ -5,7 +5,15 @@ import { useMutation } from "@apollo/react-hooks";
 import { Link } from "react-router-dom";
 
 // semantic ui stuff
-import { Divider, Grid, Container, Form, Button } from "semantic-ui-react";
+import {
+  Divider,
+  Grid,
+  Container,
+  Form,
+  Button,
+  Card,
+  CardContent
+} from "semantic-ui-react";
 import { Label } from "semantic-ui-react";
 import Home from "./Home";
 
@@ -26,6 +34,8 @@ function DeleteAccount(props) {
   return (
     <Container>
       <div>
+        <br />
+        <br />
         <Grid columns={2}>
           <Grid.Row>
             <Grid.Column>
@@ -45,6 +55,44 @@ function DeleteAccount(props) {
                     props.history.push("/");
                   }}
                 ></Button>
+              </Form>
+            </Grid.Column>
+            {/* column 2 for contact */}
+            <Grid.Column>
+              <Form loading={loading ? true : null}>
+                <Label size="big">
+                  <Label.Detail>Name of the account</Label.Detail>
+                </Label>
+                <Form.Input
+                  placeholder="Add Reason to touch with use"
+                  type="email"
+                  name="Account name.."
+                />
+                <Label>
+                  <Label.Detail>Email of the account</Label.Detail>
+                </Label>
+                <Form.Input
+                  placeholder="Add Reason to touch with use"
+                  type="text"
+                  name="Account name.."
+                />
+                <Label>
+                  <Label.Detail>Favourite food</Label.Detail>
+                </Label>
+                <Form.Input
+                  placeholder="Favourite food  with use"
+                  type="text"
+                  name="Food..."
+                />
+                <Button content="Contact Account" negative />
+                <Button
+                  color="olive"
+                  onClick={() => {
+                    props.history.push("/UserProfile");
+                  }}
+                >
+                  About Account
+                </Button>
               </Form>
             </Grid.Column>
           </Grid.Row>

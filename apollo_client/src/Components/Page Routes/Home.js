@@ -57,7 +57,7 @@ const Home = () => {
           <Segment>
             <Menu>
               <Menu.Item>
-                <span>Welcome to Developers Community</span>
+                <span>Welcome to Food Restaurent Community</span>
               </Menu.Item>
               <Menu.Item position="right">
                 <Flag name="in" />

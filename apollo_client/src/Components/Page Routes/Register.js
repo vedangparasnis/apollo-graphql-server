@@ -24,7 +24,6 @@ function Register(props) {
   const [addUser, { loading }] = useMutation(query, {
     // triggered on success register as a callback async
     update(proxy, result) {
-      console.log(result);
       setErrors({});
       context.login(result.data.register);
       let token = result.data.token;
@@ -94,6 +93,15 @@ function Register(props) {
             label="email"
             placeholder="Email..."
             name="email"
+            required
+            value={userVal.email}
+            onChange={changer}
+          />
+          <br />
+          <Form.Input
+            label="Food"
+            placeholder="What Food you like..."
+            name="Food"
             required
             value={userVal.email}
             onChange={changer}

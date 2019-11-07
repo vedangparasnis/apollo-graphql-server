@@ -51,3 +51,6 @@ mutation{
 window.href.location = history itempush of current window = sindow.open('',_self)
 
 navbar does not inherit parent router dom so require window object
+
+
+//food with us

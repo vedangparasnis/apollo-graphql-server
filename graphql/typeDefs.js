@@ -36,6 +36,16 @@ module.exports = gql`
     developerExp: String!
     bio: String!
   }
+  type Food {
+    id: String!
+    name: String
+    image: String
+    category: String
+    label: String
+    price: String
+    featured: String
+    description: String
+  }
   type updatesforUser {
     id: ID!
     email: String!
@@ -52,6 +62,7 @@ module.exports = gql`
     getPostById(postId: ID!): Posts!
     deletePostById(postId: ID!): String!
     getUserswithUs: [User]
+    getServerData: [Food]
   }
   type Mutation {
     register(registerInput: RegisterInput): RegisterUser!

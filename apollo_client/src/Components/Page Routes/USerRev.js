@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import gql from "graphql-tag";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/react-hooks";
 import decode from "jwt-decode";
 
 import { AuthContext } from "../Context/context";
@@ -10,18 +10,18 @@ import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 const USerRev = () => {
   // all the hooks
   const [complete, setComplete] = React.useState(false);
-  const [data, setData] = React.useState({ body: "" });
+  let [data, setData] = React.useState({ body: "" });
   const [currentUser, setCcurrentUser] = React.useState("");
   const [err, setErr] = React.useState({});
 
   // meiddleware for setting context
-  const [addPost, { loading }] = useMutation(query, {
+  const { body } = data;
+  const [addPost, { loading }] = useMutation(postQuery, {
     update(proxy, result) {
-      console.log(result);
       setComplete(true);
     },
     onError(err) {
-      console.log(err.graphQLErrors[0]);
+      console.log(data);
       setErr(err);
     },
     onCompleted() {
@@ -29,10 +29,10 @@ const USerRev = () => {
     }
   });
   const changer = e => {
-    let body = e.target.value;
-    const curr = { body };
+    let bodies = e.target.value;
+    const curr = { bodies };
     setData({ ...data, ...curr });
-    console.log(data);
+    // console.log(data);
   };
   const submit = e => {
     e.preventDefault();
@@ -78,7 +78,7 @@ const USerRev = () => {
   );
 };
 
-const query = gql`
+const postQuery = gql`
   mutation createPost($body: String!) {
     createPost(body: $body) {
       id

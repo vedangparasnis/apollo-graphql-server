@@ -15,7 +15,7 @@ import { Query } from "mongoose";
 
 import "../../../App.css";
 
-const Drawer = () => {
+const Drawer = props => {
   // usemutation return an array while query return a queru
   let datas;
   const [users, setUsers] = React.useState([]);
@@ -39,7 +39,7 @@ const Drawer = () => {
       <Sidebar.Pushable>
         <Sidebar
           as={Menu}
-          animation="overlay"
+          animation="scale down"
           icon="labeled"
           inverted
           onHide={() => setVisible(false)}
@@ -47,9 +47,11 @@ const Drawer = () => {
           visible={visible}
           width={token ? "wide" : "very thin"}
         >
-          <Menu.Item as="a">
+          <Menu.Item as="div">
             <Button secondary>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <Icon name="home" />
+              </Link>
             </Button>
           </Menu.Item>
           {token ? (
@@ -61,7 +63,7 @@ const Drawer = () => {
                     localStorage.clear();
                     context.logout();
                     // same as props.history.push('/')  as parent router-dom hoc
-                    window.location.href = "/Login";
+                    props.history.push("/Login");
                   }}
                 >
                   Logout
@@ -69,8 +71,20 @@ const Drawer = () => {
               </Menu.Item>
               <Menu.Item>
                 <Button secondary>
-                  <Link to="/DeleteAccount"> Delete </Link>
-                  <Icon name="delete"></Icon>
+                  <Link to="/DeleteAccount"> Delete/Contact Us</Link>
+                  <Icon name="delete" style={{ marginLeft: "20px" }}></Icon>
+                </Button>
+              </Menu.Item>
+              <Menu.Item>
+                <Button secondary>
+                  <Link to="/UserProfile"> User with Us</Link>
+                  <Icon name="user" style={{ marginLeft: "20px" }}></Icon>
+                </Button>
+              </Menu.Item>
+              <Menu.Item>
+                <Button secondary>
+                  <Link to="/Menu">Our Menu</Link>
+                  <Icon name="food" style={{ marginLeft: "20px" }}></Icon>
                 </Button>
               </Menu.Item>
             </div>

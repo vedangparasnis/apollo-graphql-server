@@ -9,7 +9,6 @@ module.exports = {
     async createPost(_, { body }, context, info) {
       const user = auth(context);
       console.log("the user is");
-
       try {
         if (body.trim().length === 0) {
           throw new UserInputError("the body length cannot be empty");
