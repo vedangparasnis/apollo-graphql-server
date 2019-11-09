@@ -28,6 +28,19 @@
   width: auto;
   /* padding: 8px 0px; */
 }
+#li {
+  text-decoration: none;
+  width: 160px;
+  color: #08e103;
+  background: #000;
+  list-style: none;
+  padding: 1.2rem;
+  margin: 3px 0px;
+}
+#but {
+  background: linear-gradient(45deg, #08e103, #071d61);
+  font-weight: bold;
+}
 .userCard {
   height: auto;
   transition: 2s ease-in-out;
