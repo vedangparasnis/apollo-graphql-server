@@ -1,8 +1,9 @@
 import React, { useReducer } from "react";
-
+import data from "../../data.json";
 // global state same as store in redux
 const AuthContext = React.createContext({
   user: null,
+  mainApiData: data,
   login: data => {},
   logout: () => {}
 });
@@ -24,6 +25,7 @@ function AuthReducer(state, action) {
         ...state,
         user: {}
       };
+
     default:
       return state;
   }
@@ -57,9 +59,16 @@ function AuthProvider(props) {
       type: "Logout"
     });
   };
+
   return (
+    // same as dispactch state to props
     <AuthContext.Provider
-      value={{ user: state.user, login, logout, DeleteAcc }}
+      value={{
+        user: state.user,
+        login,
+        logout,
+        DeleteAcc
+      }}
       {...props}
     />
   );

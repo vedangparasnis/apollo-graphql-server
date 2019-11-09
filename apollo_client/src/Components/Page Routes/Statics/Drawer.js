@@ -45,7 +45,7 @@ const Drawer = props => {
           onHide={() => setVisible(false)}
           vertical
           visible={visible}
-          width={token ? "wide" : "very thin"}
+          width={token ? "wide" : " thin"}
         >
           <Menu.Item as="div">
             <Button secondary>

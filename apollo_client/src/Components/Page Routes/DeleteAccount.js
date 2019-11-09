@@ -55,6 +55,13 @@ function DeleteAccount(props) {
                     props.history.push("/");
                   }}
                 ></Button>
+                <Button
+                  content="Order Food ? decison changed"
+                  positive
+                  onClick={() => {
+                    props.history.push("/Menu");
+                  }}
+                ></Button>
               </Form>
             </Grid.Column>
             {/* column 2 for contact */}
