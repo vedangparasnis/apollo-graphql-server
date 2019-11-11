@@ -7,8 +7,10 @@ import {
   Button,
   Divider,
   Card,
-  CardHeader
+  CardHeader,
+  Icon
 } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 import { List, arrayMove } from "react-movable";
 import "../../App.css";
@@ -22,12 +24,19 @@ const Menus = props => {
   const [localData, setLocalData] = React.useState({});
   const [selected, setSelected] = React.useState([]);
   let [doodname, setFoodname] = React.useState([]);
+  const [scrollStatus, setscrollStatus] = React.useState(false);
   React.useState(() => {
     console.log(data.categorys);
     setLocalData(data);
   }, []);
-
+  window.addEventListener("scroll", () => {
+    if (scrollStatus == false) {
+      setscrollStatus(true);
+      console.log("display model");
+    }
+  });
   const [err, setErr] = React.useState({ err: "" });
+  const Clicker = e => {};
   return (
     <div>
       <Container>
@@ -49,32 +58,66 @@ const Menus = props => {
 
         <Grid columns={3}>
           <Grid.Column width={4}>
-            <Button color="pink" fluid size="small">
-              Indian
+            <Label color="red">
+              Apply Filters <Icon name="filter" />
+            </Label>
+            <Divider horizontal />
+            <Button color="pink" fluid size="small" onClick={Clicker}>
+              Appeteasers
             </Button>
             <br />
-            <Button color="red" fluid size="small">
-              Spicy Indian
+            <Button
+              color="red"
+              fluid
+              size="small"
+              onClick={Clicker("Fino sides")}
+            >
+              Fino sides
             </Button>
             <br />
-            <Button color="green" fluid size="small">
+            <Button
+              color="green"
+              fluid
+              size="small"
+              onClick={Clicker("Peri-peri chicken")}
+            >
+              Peri-peri chicken
+            </Button>
+            <br />
+            <Button
+              color="yellow"
+              fluid
+              size="small"
+              onClick={Clicker("Sharing platters")}
+            >
+              Sharing platters
+            </Button>
+            <br />
+            <Button
+              color="linkedin"
+              fluid
+              size="small"
+              onClick={Clicker("Mexican")}
+            >
               Mexican
             </Button>
             <br />
-            <Button color="yellow" fluid size="small">
-              Fast Food
+            <Button
+              color="grey"
+              fluid
+              size="small"
+              onClick={Clicker("Dessert")}
+            >
+              Dessert
             </Button>
             <br />
-            <Button color="linkedin" fluid size="small">
-              Mexican
-            </Button>
-            <br />
-            <Button color="grey" fluid size="small">
-              American
-            </Button>
-            <br />
-            <Button color="olive" fluid size="small">
-              Russian Beer
+            <Button
+              color="olive"
+              fluid
+              size="small"
+              onClick={Clicker("Salads")}
+            >
+              Salads
             </Button>
             <br />
           </Grid.Column>
@@ -135,7 +178,9 @@ const Menus = props => {
               )}
             />
             {doodname.length > 5 ? (
-              <Button color="blue">Done Now</Button>
+              <Button color="blue">
+                <Link to="/Menu">Compare Order Now</Link>
+              </Button>
             ) : (
               <Button loading color="orange">
                 ADD MORE

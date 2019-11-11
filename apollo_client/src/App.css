@@ -30,15 +30,19 @@
 }
 #li {
   text-decoration: none;
-  width: 160px;
-  color: #08e103;
-  background: #000;
+  width: 180px;
+  background: linear-gradient(45deg, #08e103, #071d61);
+  color: #fff;
   list-style: none;
   padding: 1.2rem;
   margin: 3px 0px;
 }
 #but {
   background: linear-gradient(45deg, #08e103, #071d61);
+  font-weight: bold;
+}
+.user-name {
+  color: white;
   font-weight: bold;
 }
 .userCard {

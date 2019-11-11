@@ -70,6 +70,7 @@ const Navbar = () => {
           ) : (
             <Menu.Item position="right">
               <Menu.Item
+                className="user-name"
                 name={currentUser.toLocaleLowerCase()}
                 active={true}
                 style={{ marginBottom: "8px" }}
