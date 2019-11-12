@@ -68,7 +68,7 @@ const USerRev = () => {
                 onChange={changer}
               />
               <Button secondary type="submit">
-                Comment on it
+                Comment on Food
               </Button>
             </Form>
           </Modal.Description>

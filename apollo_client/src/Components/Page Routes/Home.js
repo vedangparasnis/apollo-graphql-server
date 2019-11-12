@@ -14,6 +14,8 @@ import { Segment, Loader, Flag } from "semantic-ui-react";
 import { Button, Icon, Label } from "semantic-ui-react";
 import { Pie, Line } from "react-chartjs-2";
 
+import GallMain from "./Statics/Galery/GallMain";
+
 const Home = () => {
   const { user } = useContext(AuthContext);
   const { loading, data } = useQuery(getAllPosts);
@@ -26,6 +28,7 @@ const Home = () => {
       <div>
         {/* chart data */}
         <div style={{ position: "relative" }}>
+          <GallMain />
           <Container>
             <Grid columns={2}>
               <Grid.Row>

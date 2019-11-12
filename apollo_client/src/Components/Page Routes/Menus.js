@@ -8,13 +8,17 @@ import {
   Divider,
   Card,
   CardHeader,
-  Icon
+  Icon,
+  Message,
+  Breadcrumb
 } from "semantic-ui-react";
+import { Modal, Header, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import { List, arrayMove } from "react-movable";
 import "../../App.css";
 import data from "../../data.json";
+import Payment from "./Statics/Payment";
 
 // set context
 
@@ -25,10 +29,12 @@ const Menus = props => {
   const [selected, setSelected] = React.useState([]);
   let [doodname, setFoodname] = React.useState([]);
   const [scrollStatus, setscrollStatus] = React.useState(false);
+  const [userLikedFood, setLikedFood] = React.useState([]);
   React.useState(() => {
     console.log(data.categorys);
     setLocalData(data);
   }, []);
+  console.log(userLikedFood);
   window.addEventListener("scroll", () => {
     if (scrollStatus == false) {
       setscrollStatus(true);
@@ -142,7 +148,6 @@ const Menus = props => {
                         />
                         <Card.Content extra>
                           <Button
-                            fluid
                             id="but"
                             onClick={() => {
                               setSelected([...selected, food_menu]);
@@ -153,6 +158,67 @@ const Menus = props => {
                           >
                             Order Food
                           </Button>
+                          <Modal trigger={<Button positive>View More </Button>}>
+                            <Modal.Header>Our Food Photo</Modal.Header>
+                            <Modal.Content image>
+                              <Image
+                                wrapped
+                                size="medium"
+                                src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
+                              />
+                              <Modal.Description>
+                                <Header>Description</Header>
+                                {food_menu.sub_items.map(subs => (
+                                  <div>
+                                    <Message color="green">
+                                      <Message.Content>
+                                        ID:{subs.id}
+                                      </Message.Content>
+                                    </Message>
+                                    <Message color="green">
+                                      <Message.Content>
+                                        Name:{subs.name}
+                                      </Message.Content>
+                                    </Message>
+                                    <Message color="green">
+                                      <Message.Content>
+                                        Position In Restaurent : {subs.position}
+                                      </Message.Content>
+                                    </Message>
+                                    <Message color="green">
+                                      <Message.Content>
+                                        Cuisine Name :: {subs.cuisine_name}
+                                      </Message.Content>
+                                    </Message>
+                                    <Message color="green">
+                                      <Message.Content>
+                                        Category Name :: {subs.category_name}
+                                      </Message.Content>
+                                    </Message>
+                                    <br />
+                                    <br />
+                                    <Breadcrumb>
+                                      Any Discount ::
+                                      {subs.discount.type}
+                                      {subs.discount.amount}
+                                    </Breadcrumb>
+                                    <Button
+                                      color="blue"
+                                      fluid
+                                      onClick={() => {
+                                        setLikedFood([
+                                          ...userLikedFood,
+                                          food_menu
+                                        ]);
+                                      }}
+                                    >
+                                      Add Food to Like
+                                    </Button>
+                                  </div>
+                                ))}
+                              </Modal.Description>
+                            </Modal.Content>
+                          </Modal>
                         </Card.Content>
                       </div>
                     ))}
@@ -178,8 +244,13 @@ const Menus = props => {
               )}
             />
             {doodname.length > 5 ? (
-              <Button color="blue">
-                <Link to="/Menu">Compare Order Now</Link>
+              <Button
+                color="green"
+                onClick={() => {
+                  props.history.push("/payments");
+                }}
+              >
+                Proceed to Payment
               </Button>
             ) : (
               <Button loading color="orange">

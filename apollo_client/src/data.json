@@ -147,7 +147,7 @@
           "position": 1,
           "description": "Tender, Spicy and Juicy. Original or Peri-Crusted",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224471",
               "name": "3 Chicken Wings",
@@ -170,7 +170,7 @@
           "position": 2,
           "description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224474",
               "name": "Chicken Livers and Portuguese Roll",
@@ -193,7 +193,7 @@
           "position": 3,
           "description": "Co-Starring Garlic, Pepper and Chili",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224477",
               "name": "Spicy Mixed Olives (V)",
@@ -216,7 +216,7 @@
           "position": 4,
           "description": "Pour Smoky PERi-PERi Oil Over Creamy Hummus and Dig in with Strips Of Warm Pita",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224480",
               "name": "Hummus with PERI-PERI Drizzle (V)",
@@ -239,7 +239,7 @@
           "position": 5,
           "description": "Dive Into Temping Roasted Red Pepper and Chili Spice Dip with Warm Pita Strips",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224483",
               "name": "Red Pepper Dip (V)",
@@ -262,7 +262,7 @@
           "position": 6,
           "description": "Choose any Three Appeteasers",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224486",
               "name": "Appeteaser Platter",
@@ -285,7 +285,7 @@
           "position": 7,
           "description": "Spicy Mixed Olives, Red Pepper Dip, Hummus with PERi-PERi Drizzle and Warm Pita Strips",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224489",
               "name": "All Together Now (V)",
@@ -315,7 +315,7 @@
           "position": 8,
           "description": "",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224522",
               "name": "Regular",
@@ -352,7 +352,7 @@
           "position": 9,
           "description": "",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224528",
               "name": "Regular",
@@ -396,7 +396,7 @@
           "position": 10,
           "description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224543",
               "name": "On its own",
@@ -447,7 +447,7 @@
           "position": 11,
           "description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224552",
               "name": "On its own",
@@ -498,7 +498,7 @@
           "position": 12,
           "description": "Original Flavours or PERi-PEREi Crusted (P)",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224561",
               "name": "On its own",
@@ -549,7 +549,7 @@
           "position": 13,
           "description": "10 Wings in PERi-PERi Flavors",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224570",
               "name": "Wing Roulette",
@@ -572,7 +572,7 @@
           "position": 14,
           "description": "Whole Chicken Marinated in PERi-PERi Sauce and Grilled",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224573",
               "name": "Whole Chicken",
@@ -595,7 +595,7 @@
           "position": 15,
           "description": "Succulent Double Chicken Breast in Crispy Skin",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224576",
               "name": "On its own",
@@ -646,7 +646,7 @@
           "position": 16,
           "description": "Tender Marinated Chicken Thighs and Fresh Peppers, Served on a Skewer",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224585",
               "name": "On its own",
@@ -697,7 +697,7 @@
           "position": 17,
           "description": "Flame-Grilled PERi-PERi Thighs, Stuffed with Feta and Parsley, Skewered with Mixed Peppers",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224594",
               "name": "On its own",
@@ -748,7 +748,7 @@
           "position": 18,
           "description": "Juicy and Tender, Delicious with All Sides",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224603",
               "name": "On its own",
@@ -806,7 +806,7 @@
           "position": 19,
           "description": "For 3-4 People, Whole Chicken with  2 Large or 4 Regular Rides",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224615",
               "name": "With 2 Large Sides",
@@ -843,7 +843,7 @@
           "position": 20,
           "description": "For 2-3 People, Chicken Butterfly and a Espetada, with 2 Large or 4 Regular Sides",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224621",
               "name": "With 2 Large Sides",
@@ -880,7 +880,7 @@
           "position": 21,
           "description": "For 4-6 People, 2 Whole Chickens and 5 Large Sides",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224627",
               "name": "Jumbo Platter",
@@ -910,7 +910,7 @@
           "position": 22,
           "description": "",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224665",
               "name": "Caramel Cheese Cake",
@@ -954,7 +954,7 @@
           "position": 23,
           "description": "Crunchy Chips with PERi-PERi Sauce",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224492",
               "name": "Regular",
@@ -991,7 +991,7 @@
           "position": 24,
           "description": "Spicy fried rice",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224498",
               "name": "Regular",
@@ -1028,7 +1028,7 @@
           "position": 25,
           "description": "Cabbage, Carrot, Nando&amp;#039;s Special Mayonnaise",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224504",
               "name": "Regular",
@@ -1065,7 +1065,7 @@
           "position": 26,
           "description": "Grilled Assorted Vegetables",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224510",
               "name": "Regular",
@@ -1102,7 +1102,7 @@
           "position": 27,
           "description": "Toasted Garlic Flavored Bread",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224516",
               "name": "Regular",
@@ -1146,7 +1146,7 @@
           "position": 28,
           "description": "Fresh Tomato, Nando&amp;#039;s Peri-Olives, Mixed Peppers, Cucumber and Onion on A Bed of Crisp Lettuce",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224534",
               "name": "Portuguese Salad",
@@ -1169,7 +1169,7 @@
           "position": 29,
           "description": "Piccolo Tomato, Cucumber, Sweet Peppers and Mixed Leaves. Sprinkled with Olives and Feta Cheese",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224537",
               "name": "Mediterranean Salad",
@@ -1192,7 +1192,7 @@
           "position": 30,
           "description": "Cos Lettuce Sprinkled with Parmesan Cheese, Caesar Dressing and Crunchy Croutons",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224540",
               "name": "Caesar Salad (M)",
@@ -1222,7 +1222,7 @@
           "position": 31,
           "description": "PERi-PERi Chicken Thighs, Mixed Peppers, Chickpeas, Spicy Rice and Cataplana Sauce",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224612",
               "name": "Cataplana Algarve",
@@ -1252,7 +1252,7 @@
           "position": 32,
           "description": "A Lightly Toasted Wrap, Generously Filled With Tender Chicken, Chili Jam, Green Leaf Lettuce and Tangy Yoghurt Sauce",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224630",
               "name": "On its own",
@@ -1303,7 +1303,7 @@
           "position": 33,
           "description": "Served on A Toasted Portuguese Roll with Fresh Rocket, Tomato, Pickled Red Onions and Perinaise",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224639",
               "name": "On its own",
@@ -1354,7 +1354,7 @@
           "position": 34,
           "description": "Served in A Toasted Wrap Full Of PERi-PERi Chicken, Crunchy Croutons, Parmesan Cheese and Sundried Tomatoes, All Smothered in Creamy Caesar Dressing",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224648",
               "name": "On its own",
@@ -1405,7 +1405,7 @@
           "position": 35,
           "description": "Served in A Lightly Toasted Pita, Stuffed With Chicken Tenders, Crisp Veggie Salad and Creamy Whip",
           "images": [],
-          "sub-items": [
+          "sub_items": [
             {
               "id": "224657",
               "name": "On its own",
