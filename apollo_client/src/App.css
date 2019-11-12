@@ -45,6 +45,18 @@
   color: white;
   font-weight: bold;
 }
+#logo {
+  height: 30px !important;
+  opacity: 0;
+}
+#carouselExampleIndicators {
+  height: 100px;
+}
+#im {
+  width: 850;
+  height: 300;
+  margin: "0 auto";
+}
 .userCard {
   height: auto;
   transition: 2s ease-in-out;

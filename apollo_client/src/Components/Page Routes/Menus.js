@@ -1,5 +1,7 @@
 import React from "react";
 
+// providers
+import { context } from "../Context/Foodcontext";
 import {
   Grid,
   Label,
@@ -21,9 +23,8 @@ import data from "../../data.json";
 import Payment from "./Statics/Payment";
 
 // set context
-
-const color = ["green", "yellow", "blue", "linkedin", "olive", "black", "red"];
 const Menus = props => {
+  const user = React.useContext(context);
   const [foodData, setfoodData] = React.useState(data);
   const [localData, setLocalData] = React.useState({});
   const [selected, setSelected] = React.useState([]);
@@ -152,7 +153,8 @@ const Menus = props => {
                             onClick={() => {
                               setSelected([...selected, food_menu]);
                               setFoodname([...doodname, food_menu.name]);
-                              console.log(selected);
+                              setLikedFood([...userLikedFood, food_menu]);
+                              user.addFood(userLikedFood);
                               // /asshole it return a callback
                             }}
                           >
@@ -243,19 +245,18 @@ const Menus = props => {
                 </li>
               )}
             />
-            {doodname.length > 5 ? (
+            {doodname.length > 0 ? (
               <Button
                 color="green"
                 onClick={() => {
-                  props.history.push("/payments");
+                  user.addFood(userLikedFood);
+                  props.history.push("/Payments");
                 }}
               >
                 Proceed to Payment
               </Button>
             ) : (
-              <Button loading color="orange">
-                ADD MORE
-              </Button>
+              <Button negative>Please add food</Button>
             )}
           </Grid.Column>
         </Grid>

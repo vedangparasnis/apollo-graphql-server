@@ -1,6 +1,14 @@
 import React, { useContext } from "react";
 
-import { Header, Icon, Image, Menu, Segment, Sidebar } from "semantic-ui-react";
+import {
+  Header,
+  Icon,
+  Image,
+  Menu,
+  Segment,
+  Sidebar,
+  Message
+} from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Dropdown } from "semantic-ui-react";
 
@@ -47,12 +55,27 @@ const Drawer = props => {
           visible={visible}
           width={token ? "wide" : " thin"}
         >
+          <Menu.Item>
+            <Image
+              style={{ textAlign: "center", marginLeft: "80px" }}
+              size="small"
+              src="https://previews.123rf.com/images/sergeypykhonin/sergeypykhonin1707/sergeypykhonin170700052/81892309-restaurant-logo-icon-or-symbol-for-design-menu-eatery-canteen-or-cafe-lettering-vector-illustration.jpg"
+            />
+            <Message color="green">
+              <Message.Content>Welcome with US</Message.Content>
+            </Message>
+          </Menu.Item>
           <Menu.Item as="div">
-            <Button secondary>
-              <Link to="/">
-                <Icon name="home" />
-              </Link>
-            </Button>
+            <span>
+              <Message color="black">
+                <Message.Content>Home</Message.Content>
+              </Message>
+              <Button secondary>
+                <Link to="/">
+                  <Icon name="home" />
+                </Link>
+              </Button>
+            </span>
           </Menu.Item>
           {token ? (
             <div>
@@ -63,7 +86,7 @@ const Drawer = props => {
                     localStorage.clear();
                     context.logout();
                     // same as props.history.push('/')  as parent router-dom hoc
-                    props.history.push("/Login");
+                    window.location.href = "/Login";
                   }}
                 >
                   Logout

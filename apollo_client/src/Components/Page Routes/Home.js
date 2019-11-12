@@ -6,6 +6,7 @@ import { AuthContext } from "../Context/context";
 // components
 import USerRev from "./USerRev";
 import { chartData } from "./Statics/StatData/stats";
+import ImageSlider from "./Statics/ImageSlider";
 
 // semantic ui stuff
 import { Header, Container, Card, Menu, Divider } from "semantic-ui-react";
@@ -14,21 +15,23 @@ import { Segment, Loader, Flag } from "semantic-ui-react";
 import { Button, Icon, Label } from "semantic-ui-react";
 import { Pie, Line } from "react-chartjs-2";
 
-import GallMain from "./Statics/Galery/GallMain";
-
 const Home = () => {
   const { user } = useContext(AuthContext);
   const { loading, data } = useQuery(getAllPosts);
   const [charts, setChart] = React.useState(chartData);
+
   // const { load, postData } = useQuery(getAllPosts);
   if (data) {
     let { getPosts } = data;
     // const { getPosts } = postData;
     return (
       <div>
+        <div>
+          {/* the image content */}
+          <ImageSlider />
+        </div>
         {/* chart data */}
-        <div style={{ position: "relative" }}>
-          <GallMain />
+        <div style={{ position: "relative", marginTop: "250px" }}>
           <Container>
             <Grid columns={2}>
               <Grid.Row>

@@ -2,6 +2,7 @@ import React from "react";
 import { Input, Menu, Container, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import jwt from "jwt-decode";
+import { Image } from "semantic-ui-react";
 
 import { Icon } from "semantic-ui-react";
 // context-hook
@@ -45,9 +46,10 @@ const Navbar = () => {
         <Menu pointing secondary>
           <Link to="/">
             <Menu.Item
-              name={`Home`}
+              name={`Synarcs Restaurent`}
               active={activeItem === "home"}
               onClick={handleItemClick}
+              style={{ color: "#fff", fonWeight: "bold" }}
             />
           </Link>
           {token == "notoken" ? (
